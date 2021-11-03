@@ -20,10 +20,10 @@ jobs:
       run: sudo tar -zxvf /tmp/gcc-4.4.0-pmon.tgz -C /opt/
 
     - name: Compile and install pmoncfg
-      run: cd tools/pmoncfg && make && sudo cp pmoncfg /opt/gcc-4.4.0-pmon/bin/
+      run: cd tools/pmoncfg && make && sudo cp pmoncfg /opt/gcc-4.3-ls232/bin/
 
     - name: Setup env
-      run: echo "/opt/gcc-4.4.0-pmon/bin" >> $GITHUB_PATH && echo "LD_LIBRARY_PATH=/opt/gcc-4.4.0-pmon/lib" >> $GITHUB_ENV && mkdir output
+      run: echo "/opt/gcc-4.3-ls232/bin" >> $GITHUB_PATH && echo "LD_LIBRARY_PATH=/opt/gcc-4.3-ls232/lib" >> $GITHUB_ENV && mkdir output
 
     - name: Compile 2edev
       run: cd zloader.2edev && make cfg && make tgt=rom && cd ..
